@@ -1,0 +1,686 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular);
+@charset "UTF-8";
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #343434;
+  line-height: 1;
+  font-family: "Roboto";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Roboto";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  max-width: 83.125rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+h1,
+h2,
+p.default,
+p.small,
+p.smaller,
+p.subtitle {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2 {
+  color: #343434;
+}
+
+@media (min-width: 85em) {
+  h1 {
+    font-size: 3.375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  h1 {
+    font-size: clamp( 2.5rem , 2.2307692308rem  +  1.3461538462vw , 3.375rem );
+  }
+}
+@media (max-width: 20em) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 85em) {
+  h2 {
+    font-size: 2.8125rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  h2 {
+    font-size: clamp( 1.9375rem , 1.6682692308rem  +  1.3461538462vw , 2.8125rem );
+  }
+}
+@media (max-width: 20em) {
+  h2 {
+    font-size: 1.9375rem;
+  }
+}
+
+p.default,
+p.small,
+p.smaller {
+  color: #121212;
+}
+
+@media (min-width: 85em) {
+  p.default {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  p.default {
+    font-size: clamp( 0.875rem , 0.7980769231rem  +  0.3846153846vw , 1.125rem );
+  }
+}
+@media (max-width: 20em) {
+  p.default {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 85em) {
+  p.small {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  p.small {
+    font-size: clamp( 0.75rem , 0.6730769231rem  +  0.3846153846vw , 1rem );
+  }
+}
+@media (max-width: 20em) {
+  p.small {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 85em) {
+  p.smaller {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  p.smaller {
+    font-size: clamp( 0.5rem , 0.4230769231rem  +  0.3846153846vw , 0.75rem );
+  }
+}
+@media (max-width: 20em) {
+  p.smaller {
+    font-size: 0.5rem;
+  }
+}
+
+p.subtitle {
+  color: #624CE0;
+  text-transform: uppercase;
+}
+@media (min-width: 85em) {
+  p.subtitle {
+    font-size: 0.9375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  p.subtitle {
+    font-size: clamp( 0.75rem , 0.6923076923rem  +  0.2884615385vw , 0.9375rem );
+  }
+}
+@media (max-width: 20em) {
+  p.subtitle {
+    font-size: 0.75rem;
+  }
+}
+
+.button {
+  padding: 0.125rem 2.8125rem;
+  color: #fff;
+  background-color: #000;
+  border-radius: 90px;
+  margin: 0.25rem 0.375rem;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.header__container {
+  margin-top: 1.25rem;
+}
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 3.5rem;
+  padding-right: 0.4375rem;
+}
+@media (min-width: 85em) {
+  .header__menu {
+    padding-left: 10.625rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .header__menu {
+    padding-left: clamp( 0rem , -3.2692307692rem  +  16.3461538462vw , 10.625rem );
+  }
+}
+@media (max-width: 20em) {
+  .header__menu {
+    padding-left: 0rem;
+  }
+}
+.header__link {
+  display: inline-block;
+  margin: 0.1875rem 0.9375rem;
+  font-size: 1rem;
+}
+.header__button {
+  padding: 0.875rem 1.5rem;
+  color: #fff;
+  background-color: #000;
+  border-radius: 18.75rem;
+  white-space: nowrap;
+}
+
+.welcome__blocks {
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 85em) {
+  .welcome__blocks {
+    padding-top: 5.1875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .welcome__blocks {
+    padding-top: clamp( 0.625rem , -0.7788461538rem  +  7.0192307692vw , 5.1875rem );
+  }
+}
+@media (max-width: 20em) {
+  .welcome__blocks {
+    padding-top: 0.625rem;
+  }
+}
+@media (min-width: 85em) {
+  .welcome__blocks {
+    padding-bottom: 8.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .welcome__blocks {
+    padding-bottom: clamp( 0.625rem , -1.875rem  +  12.5vw , 8.75rem );
+  }
+}
+@media (max-width: 20em) {
+  .welcome__blocks {
+    padding-bottom: 0.625rem;
+  }
+}
+@media (max-width: 61.99875em) {
+  .welcome__blocks {
+    flex-wrap: wrap;
+  }
+}
+.welcome__subtitle {
+  margin-bottom: 0.875rem;
+}
+.welcome__title {
+  padding-bottom: 1.75rem;
+}
+.welcome__description {
+  margin-bottom: 2.125rem;
+}
+.welcome__element-1 {
+  flex-basis: 50%;
+}
+@media (max-width: 47.99875em) {
+  .welcome__element-1 {
+    flex-basis: 100%;
+  }
+}
+.welcome__element-2 {
+  margin: -5.1875rem auto 0;
+}
+.welcome__buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+.welcome__button {
+  padding: 0.125rem 2.8125rem;
+  color: #8979E8;
+  border: #8979E8 2px solid;
+  border-radius: 90px;
+  margin: 0.25rem 0.375rem;
+  white-space: nowrap;
+}
+.welcome__button-filled {
+  background-color: #8979E8;
+  color: #fff;
+}
+@media (min-width: 85em) {
+  .welcome__partners {
+    margin-bottom: 8.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .welcome__partners {
+    margin-bottom: clamp( 0.875rem , -1.5480769231rem  +  12.1153846154vw , 8.75rem );
+  }
+}
+@media (max-width: 20em) {
+  .welcome__partners {
+    margin-bottom: 0.875rem;
+  }
+}
+.welcome__partners-list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1040px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.managing {
+  background-color: #F3F1FC;
+}
+.managing__container {
+  text-align: center;
+  padding-top: 5.1875rem;
+  padding-bottom: 2.1875rem;
+}
+.managing__text-container {
+  max-width: 39.75rem;
+  margin: 0 auto;
+}
+.managing__subtitle {
+  margin-bottom: 0.75rem;
+}
+.managing__title {
+  margin-bottom: 0.6875rem;
+}
+.managing__description {
+  margin-bottom: 1.5rem;
+}
+.managing__preview {
+  width: 80%;
+}
+@media (max-width: 61.99875em) {
+  .managing__preview {
+    width: 100%;
+  }
+}
+
+@media (min-width: 85em) {
+  .abitilies__container {
+    padding-top: 5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .abitilies__container {
+    padding-top: clamp( 1.25rem , 0.0961538462rem  +  5.7692307692vw , 5rem );
+  }
+}
+@media (max-width: 20em) {
+  .abitilies__container {
+    padding-top: 1.25rem;
+  }
+}
+@media (min-width: 85em) {
+  .abitilies__container {
+    padding-bottom: 5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .abitilies__container {
+    padding-bottom: clamp( 1.25rem , 0.0961538462rem  +  5.7692307692vw , 5rem );
+  }
+}
+@media (max-width: 20em) {
+  .abitilies__container {
+    padding-bottom: 1.25rem;
+  }
+}
+.control {
+  display: flex;
+  flex-wrap: wrap;
+}
+.control__element-1 {
+  flex-basis: 40%;
+}
+.control__element-2 {
+  flex-basis: 60%;
+}
+@media (max-width: 47.99875em) {
+  .control__element {
+    flex-basis: 100%;
+  }
+}
+.control__cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.control__card {
+  flex-basis: 33.333%;
+}
+@media (max-width: 61.99875em) {
+  .control__card {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 47.99875em) {
+  .control__card {
+    flex-basis: 100%;
+  }
+}
+.shop__block {
+  display: flex;
+}
+@media (min-width: 85em) {
+  .shop__block {
+    margin-top: 5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .shop__block {
+    margin-top: clamp( 1.25rem , 0.0961538462rem  +  5.7692307692vw , 5rem );
+  }
+}
+@media (max-width: 20em) {
+  .shop__block {
+    margin-top: 1.25rem;
+  }
+}
+@media (min-width: 85em) {
+  .shop__block {
+    margin-bottom: 5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .shop__block {
+    margin-bottom: clamp( 1.25rem , 0.0961538462rem  +  5.7692307692vw , 5rem );
+  }
+}
+@media (max-width: 20em) {
+  .shop__block {
+    margin-bottom: 1.25rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .shop-block {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 47.99875em) {
+  .shop-block__element-1 {
+    flex-basis: 30%;
+  }
+}
+@media (min-width: 47.99875em) {
+  .shop-block__element-2 {
+    flex-basis: 70%;
+  }
+}
+@media (max-width: 47.99875em) {
+  .shop-block__element {
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+
+.rates {
+  background-color: #F7F3EB;
+}
+.rates__container {
+  max-width: 61.875rem;
+}
+@media (min-width: 85em) {
+  .rates__container {
+    padding-top: 4.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .rates__container {
+    padding-top: clamp( 0.625rem , -0.6442307692rem  +  6.3461538462vw , 4.75rem );
+  }
+}
+@media (max-width: 20em) {
+  .rates__container {
+    padding-top: 0.625rem;
+  }
+}
+@media (min-width: 85em) {
+  .rates__container {
+    padding-bottom: 4.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .rates__container {
+    padding-bottom: clamp( 0.625rem , -0.6442307692rem  +  6.3461538462vw , 4.75rem );
+  }
+}
+@media (max-width: 20em) {
+  .rates__container {
+    padding-bottom: 0.625rem;
+  }
+}
+.rates__title {
+  margin-bottom: 1.625rem;
+}
+.rates__description {
+  margin-bottom: 3.4375rem;
+}
+.rates__swiper {
+  height: none;
+}
+.rates__slide {
+  display: block;
+  background-color: #fff;
+}
+@media (min-width: 85em) {
+  .rates__slide {
+    padding-left: 5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .rates__slide {
+    padding-left: clamp( 1.25rem , 0.0961538462rem  +  5.7692307692vw , 5rem );
+  }
+}
+@media (max-width: 20em) {
+  .rates__slide {
+    padding-left: 1.25rem;
+  }
+}
+@media (min-width: 85em) {
+  .rates__slide {
+    padding-right: 5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 85em) {
+  .rates__slide {
+    padding-right: clamp( 1.25rem , 0.0961538462rem  +  5.7692307692vw , 5rem );
+  }
+}
+@media (max-width: 20em) {
+  .rates__slide {
+    padding-right: 1.25rem;
+  }
+}
+
+.plans__cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 68.75rem;
+  margin: 0 auto;
+  box-shadow: #000 0px 0px 10px;
+}
+.plans__card {
+  flex-basis: 33.333%;
+}
+.plans-card {
+  padding: 2.75rem;
+}
+.plans-card__title {
+  font-size: 1.3125rem;
+  margin-bottom: 1.125rem;
+}
+.plans-card__description {
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+.plans-card__price {
+  font-size: 1.4375rem;
+  margin-bottom: 1.25rem;
+}
+.plans-card__button {
+  padding: 1.0625rem 6.6875rem;
+  background-color: #8979E8;
+  display: block;
+  border-radius: 45px;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+}
+.plans-card__abitilie {
+  font-size: 0.8125rem;
+  margin: 0.875rem 0;
+  text-align: center;
+}
+.swiper {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  display: flex;
+  position: relative;
+}
+
+.swiper-vertical .swiper-wrapper {
+  flex-direction: column;
+}
+
+.swiper-autoheight .swiper-wrapper {
+  align-items: flex-start;
+}
+
+.swiper-initialized .swiper-slide {
+  flex-shrink: 0;
+}
+
+.swiper-android .swiper-slide,
+.swiper-android .swiper-wrapper {
+  transform: translate3d(0px, 0, 0);
+}
+
+.swiper-button-lock {
+  display: none !important;
+}
